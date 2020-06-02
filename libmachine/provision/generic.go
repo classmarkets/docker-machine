@@ -100,7 +100,9 @@ func (provisioner *GenericProvisioner) GenerateDockerOptions(dockerPort int) (*D
 DOCKER_OPTS='
 -H tcp://0.0.0.0:{{.DockerPort}}
 -H unix:///var/run/docker.sock
+{{ if ne .EngineOptions.StorageDriver "" }}
 --storage-driver {{.EngineOptions.StorageDriver}}
+{{ end }}
 --tlsverify
 --tlscacert {{.AuthOptions.CaCertRemotePath}}
 --tlscert {{.AuthOptions.ServerCertRemotePath}}
