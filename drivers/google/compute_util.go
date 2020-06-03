@@ -39,6 +39,7 @@ type ComputeUtil struct {
 	SwarmMaster       bool
 	SwarmHost         string
 	openPorts         []string
+	metadata          map[string]string
 }
 
 const (
@@ -78,6 +79,7 @@ func newComputeUtil(driver *Driver) (*ComputeUtil, error) {
 		SwarmMaster:       driver.SwarmMaster,
 		SwarmHost:         driver.SwarmHost,
 		openPorts:         driver.OpenPorts,
+		metadata:          driver.Metadata,
 	}, nil
 }
 
@@ -308,6 +310,17 @@ func (c *ComputeUtil) createInstance(d *Driver) error {
 	} else {
 		instance.Disks[0].Source = c.zoneURL + "/disks/" + c.instanceName + "-disk"
 	}
+
+	if len(c.metadata) > 0 {
+		instance.Metadata = new(raw.Metadata)
+		for k, v := range c.metadata {
+			instance.Metadata.Items = append(instance.Metadata.Items, &raw.MetadataItems{
+				Key:   k,
+				Value: &v,
+			})
+		}
+	}
+
 	op, err := c.service.Instances.Insert(c.project, c.zone, instance).Do()
 
 	if err != nil {
@@ -377,12 +390,10 @@ func (c *ComputeUtil) uploadSSHKey(instance *raw.Instance, sshKeyPath string) er
 
 	op, err := c.service.Instances.SetMetadata(c.project, c.zone, c.instanceName, &raw.Metadata{
 		Fingerprint: instance.Metadata.Fingerprint,
-		Items: []*raw.MetadataItems{
-			{
-				Key:   "sshKeys",
-				Value: &metaDataValue,
-			},
-		},
+		Items: append(instance.Metadata.Items, &raw.MetadataItems{
+			Key:   "sshKeys",
+			Value: &metaDataValue,
+		}),
 	}).Do()
 
 	return c.waitForRegionalOp(op.Name)

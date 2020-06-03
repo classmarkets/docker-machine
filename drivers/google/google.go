@@ -3,6 +3,7 @@ package google
 import (
 	"errors"
 	"fmt"
+	"io/ioutil"
 	"net"
 	"strings"
 
@@ -153,6 +154,10 @@ func (d *Driver) GetCreateFlags() []mcnflag.Flag {
 			Name:  "google-open-port",
 			Usage: "Make the specified port number accessible from the Internet, e.g, 8080/tcp",
 		},
+		mcnflag.StringSliceFlag{
+			Name:  "google-metadata",
+			Usage: "Key-value pairs specifying instance metadata in the form of key=value. Use key=@/value to read the value from the file named /value.",
+		},
 	}
 }
 
@@ -219,6 +224,23 @@ func (d *Driver) SetConfigFromFlags(flags drivers.DriverOptions) error {
 		d.Scopes = flags.String("google-scopes")
 		d.Tags = flags.String("google-tags")
 		d.OpenPorts = flags.StringSlice("google-open-port")
+		metaKVs := flags.StringSlice("google-metadata")
+		d.Metadata = make(map[string]string)
+		for _, metaKV := range metaKVs {
+			if kv := strings.SplitN(metaKV, "=", 2); len(kv) == 2 {
+				k, v := kv[0], kv[1]
+				if strings.HasPrefix(v, "@") {
+					b, err := ioutil.ReadFile(v[1:])
+					if err != nil {
+						return err
+					}
+					v = string(b)
+				}
+				d.Metadata[k] = v
+			} else {
+				return errors.New("malformed metadata option: " + metaKV)
+			}
+		}
 	}
 	d.SSHUser = flags.String("google-username")
 	d.SSHPort = 22
