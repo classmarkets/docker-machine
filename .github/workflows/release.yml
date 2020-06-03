@@ -1,0 +1,31 @@
+name: Release
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  release:
+    name: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: install go
+        run: curl --fail -L https://dl.google.com/go/go1.14.4.linux-amd64.tar.gz | sudo tar -xz -C /usr/local
+      - uses: actions/checkout@v2
+      - run: /usr/local/go/bin/go build ./cmd/docker-machine
+        env:
+          GOROOT: ""
+          GOPATH: ""
+      - name: remove existing release asset
+        run: curl --fail
+          https://api.github.com/repos/classmarkets/docker-machine/releases/27167204/assets
+          | jq '.[].id'
+          | xargs --no-run-if-empty -I{}
+            curl --fail -H Authorization:"token ${{ secrets.GITHUB_TOKEN }}"
+            -X DELETE https://api.github.com/repos/classmarkets/docker-machine/releases/assets/{}
+      - name: add new binary to release
+        run: curl --fail -H Authorization:"token ${{ secrets.GITHUB_TOKEN }}"
+          -H Content-Type:application/octet-stream
+          --data-binary @docker-machine
+          -X POST 'https://uploads.github.com/repos/classmarkets/docker-machine/releases/27167204/assets?name=docker-machine&label=docker-machine-amd64'
