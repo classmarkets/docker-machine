@@ -9,11 +9,11 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/docker/machine/commands/mcndirs"
-	"github.com/docker/machine/libmachine"
-	"github.com/docker/machine/libmachine/check"
-	"github.com/docker/machine/libmachine/log"
-	"github.com/docker/machine/libmachine/shell"
+	"github.com/classmarkets/docker-machine/commands/mcndirs"
+	"github.com/classmarkets/docker-machine/libmachine"
+	"github.com/classmarkets/docker-machine/libmachine/check"
+	"github.com/classmarkets/docker-machine/libmachine/log"
+	"github.com/classmarkets/docker-machine/libmachine/shell"
 )
 
 const (

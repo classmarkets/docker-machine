@@ -4,9 +4,9 @@ import (
 	"fmt"
 	neturl "net/url"
 
-	"github.com/docker/machine/libmachine/drivers"
-	"github.com/docker/machine/libmachine/mcnflag"
-	"github.com/docker/machine/libmachine/state"
+	"github.com/classmarkets/docker-machine/libmachine/drivers"
+	"github.com/classmarkets/docker-machine/libmachine/mcnflag"
+	"github.com/classmarkets/docker-machine/libmachine/state"
 )
 
 const driverName = "none"

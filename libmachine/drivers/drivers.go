@@ -3,9 +3,9 @@ package drivers
 import (
 	"errors"
 
-	"github.com/docker/machine/libmachine/log"
-	"github.com/docker/machine/libmachine/mcnflag"
-	"github.com/docker/machine/libmachine/state"
+	"github.com/classmarkets/docker-machine/libmachine/log"
+	"github.com/classmarkets/docker-machine/libmachine/mcnflag"
+	"github.com/classmarkets/docker-machine/libmachine/state"
 )
 
 // Driver defines how a host is created and controlled. Different types of

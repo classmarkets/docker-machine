@@ -14,15 +14,15 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/docker/machine/libmachine/drivers"
-	"github.com/docker/machine/libmachine/log"
-	"github.com/docker/machine/libmachine/mcnflag"
-	"github.com/docker/machine/libmachine/mcnutils"
-	"github.com/docker/machine/libmachine/state"
+	"github.com/classmarkets/docker-machine/libmachine/drivers"
+	"github.com/classmarkets/docker-machine/libmachine/log"
+	"github.com/classmarkets/docker-machine/libmachine/mcnflag"
+	"github.com/classmarkets/docker-machine/libmachine/mcnutils"
+	"github.com/classmarkets/docker-machine/libmachine/state"
 	"github.com/exoscale/egoscale"
 )
 
-// Driver is the struct compatible with github.com/docker/machine/libmachine/drivers.Driver interface
+// Driver is the struct compatible with github.com/classmarkets/docker-machine/libmachine/drivers.Driver interface
 type Driver struct {
 	*drivers.BaseDriver
 	URL              string

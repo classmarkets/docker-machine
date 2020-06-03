@@ -10,12 +10,12 @@ import (
 	"github.com/Azure/azure-sdk-for-go/arm/network"
 	"github.com/Azure/go-autorest/autorest/azure"
 	"github.com/Azure/go-autorest/autorest/to"
-	"github.com/docker/machine/drivers/azure/azureutil"
-	"github.com/docker/machine/drivers/azure/logutil"
-	"github.com/docker/machine/drivers/driverutil"
-	"github.com/docker/machine/libmachine/log"
-	"github.com/docker/machine/libmachine/ssh"
-	"github.com/docker/machine/libmachine/state"
+	"github.com/classmarkets/docker-machine/drivers/azure/azureutil"
+	"github.com/classmarkets/docker-machine/drivers/azure/logutil"
+	"github.com/classmarkets/docker-machine/drivers/driverutil"
+	"github.com/classmarkets/docker-machine/libmachine/log"
+	"github.com/classmarkets/docker-machine/libmachine/ssh"
+	"github.com/classmarkets/docker-machine/libmachine/state"
 )
 
 var (

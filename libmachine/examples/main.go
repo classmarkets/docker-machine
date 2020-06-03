@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/docker/machine/drivers/virtualbox"
-	"github.com/docker/machine/libmachine"
-	"github.com/docker/machine/libmachine/log"
+	"github.com/classmarkets/docker-machine/drivers/virtualbox"
+	"github.com/classmarkets/docker-machine/libmachine"
+	"github.com/classmarkets/docker-machine/libmachine/log"
 )
 
 func usage() {

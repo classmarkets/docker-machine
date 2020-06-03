@@ -3,11 +3,11 @@ package provision
 import (
 	"testing"
 
-	"github.com/docker/machine/drivers/fakedriver"
-	"github.com/docker/machine/libmachine/auth"
-	"github.com/docker/machine/libmachine/engine"
-	"github.com/docker/machine/libmachine/provision/provisiontest"
-	"github.com/docker/machine/libmachine/swarm"
+	"github.com/classmarkets/docker-machine/drivers/fakedriver"
+	"github.com/classmarkets/docker-machine/libmachine/auth"
+	"github.com/classmarkets/docker-machine/libmachine/engine"
+	"github.com/classmarkets/docker-machine/libmachine/provision/provisiontest"
+	"github.com/classmarkets/docker-machine/libmachine/swarm"
 )
 
 func TestUbuntuSystemdCompatibleWithHost(t *testing.T) {

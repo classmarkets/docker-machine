@@ -1,11 +1,11 @@
 package libmachinetest
 
 import (
-	"github.com/docker/machine/libmachine"
-	"github.com/docker/machine/libmachine/drivers"
-	"github.com/docker/machine/libmachine/host"
-	"github.com/docker/machine/libmachine/mcnerror"
-	"github.com/docker/machine/libmachine/state"
+	"github.com/classmarkets/docker-machine/libmachine"
+	"github.com/classmarkets/docker-machine/libmachine/drivers"
+	"github.com/classmarkets/docker-machine/libmachine/host"
+	"github.com/classmarkets/docker-machine/libmachine/mcnerror"
+	"github.com/classmarkets/docker-machine/libmachine/state"
 )
 
 type FakeAPI struct {

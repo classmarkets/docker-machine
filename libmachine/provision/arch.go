@@ -3,14 +3,14 @@ package provision
 import (
 	"fmt"
 
-	"github.com/docker/machine/libmachine/auth"
-	"github.com/docker/machine/libmachine/drivers"
-	"github.com/docker/machine/libmachine/engine"
-	"github.com/docker/machine/libmachine/log"
-	"github.com/docker/machine/libmachine/mcnutils"
-	"github.com/docker/machine/libmachine/provision/pkgaction"
-	"github.com/docker/machine/libmachine/provision/serviceaction"
-	"github.com/docker/machine/libmachine/swarm"
+	"github.com/classmarkets/docker-machine/libmachine/auth"
+	"github.com/classmarkets/docker-machine/libmachine/drivers"
+	"github.com/classmarkets/docker-machine/libmachine/engine"
+	"github.com/classmarkets/docker-machine/libmachine/log"
+	"github.com/classmarkets/docker-machine/libmachine/mcnutils"
+	"github.com/classmarkets/docker-machine/libmachine/provision/pkgaction"
+	"github.com/classmarkets/docker-machine/libmachine/provision/serviceaction"
+	"github.com/classmarkets/docker-machine/libmachine/swarm"
 )
 
 func init() {

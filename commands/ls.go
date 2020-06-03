@@ -13,15 +13,15 @@ import (
 
 	"io"
 
-	"github.com/docker/machine/libmachine"
-	"github.com/docker/machine/libmachine/drivers"
-	"github.com/docker/machine/libmachine/engine"
-	"github.com/docker/machine/libmachine/host"
-	"github.com/docker/machine/libmachine/log"
-	"github.com/docker/machine/libmachine/mcndockerclient"
-	"github.com/docker/machine/libmachine/persist"
-	"github.com/docker/machine/libmachine/state"
-	"github.com/docker/machine/libmachine/swarm"
+	"github.com/classmarkets/docker-machine/libmachine"
+	"github.com/classmarkets/docker-machine/libmachine/drivers"
+	"github.com/classmarkets/docker-machine/libmachine/engine"
+	"github.com/classmarkets/docker-machine/libmachine/host"
+	"github.com/classmarkets/docker-machine/libmachine/log"
+	"github.com/classmarkets/docker-machine/libmachine/mcndockerclient"
+	"github.com/classmarkets/docker-machine/libmachine/persist"
+	"github.com/classmarkets/docker-machine/libmachine/state"
+	"github.com/classmarkets/docker-machine/libmachine/swarm"
 	"github.com/skarademir/naturalsort"
 )
 

@@ -8,27 +8,27 @@ import (
 	"path/filepath"
 
 	"github.com/codegangsta/cli"
-	"github.com/docker/machine/commands"
-	"github.com/docker/machine/commands/mcndirs"
-	"github.com/docker/machine/drivers/amazonec2"
-	"github.com/docker/machine/drivers/azure"
-	"github.com/docker/machine/drivers/digitalocean"
-	"github.com/docker/machine/drivers/exoscale"
-	"github.com/docker/machine/drivers/generic"
-	"github.com/docker/machine/drivers/google"
-	"github.com/docker/machine/drivers/hyperv"
-	"github.com/docker/machine/drivers/none"
-	"github.com/docker/machine/drivers/openstack"
-	"github.com/docker/machine/drivers/rackspace"
-	"github.com/docker/machine/drivers/softlayer"
-	"github.com/docker/machine/drivers/virtualbox"
-	"github.com/docker/machine/drivers/vmwarefusion"
-	"github.com/docker/machine/drivers/vmwarevcloudair"
-	"github.com/docker/machine/drivers/vmwarevsphere"
-	"github.com/docker/machine/libmachine/drivers/plugin"
-	"github.com/docker/machine/libmachine/drivers/plugin/localbinary"
-	"github.com/docker/machine/libmachine/log"
-	"github.com/docker/machine/version"
+	"github.com/classmarkets/docker-machine/commands"
+	"github.com/classmarkets/docker-machine/commands/mcndirs"
+	"github.com/classmarkets/docker-machine/drivers/amazonec2"
+	"github.com/classmarkets/docker-machine/drivers/azure"
+	"github.com/classmarkets/docker-machine/drivers/digitalocean"
+	"github.com/classmarkets/docker-machine/drivers/exoscale"
+	"github.com/classmarkets/docker-machine/drivers/generic"
+	"github.com/classmarkets/docker-machine/drivers/google"
+	"github.com/classmarkets/docker-machine/drivers/hyperv"
+	"github.com/classmarkets/docker-machine/drivers/none"
+	"github.com/classmarkets/docker-machine/drivers/openstack"
+	"github.com/classmarkets/docker-machine/drivers/rackspace"
+	"github.com/classmarkets/docker-machine/drivers/softlayer"
+	"github.com/classmarkets/docker-machine/drivers/virtualbox"
+	"github.com/classmarkets/docker-machine/drivers/vmwarefusion"
+	"github.com/classmarkets/docker-machine/drivers/vmwarevcloudair"
+	"github.com/classmarkets/docker-machine/drivers/vmwarevsphere"
+	"github.com/classmarkets/docker-machine/libmachine/drivers/plugin"
+	"github.com/classmarkets/docker-machine/libmachine/drivers/plugin/localbinary"
+	"github.com/classmarkets/docker-machine/libmachine/log"
+	"github.com/classmarkets/docker-machine/version"
 )
 
 var AppHelpTemplate = `Usage: {{.Name}} {{if .Flags}}[OPTIONS] {{end}}COMMAND [arg...]
@@ -97,7 +97,7 @@ func main() {
 	app := cli.NewApp()
 	app.Name = filepath.Base(os.Args[0])
 	app.Author = "Docker Machine Contributors"
-	app.Email = "https://github.com/docker/machine"
+	app.Email = "https://github.com/classmarkets/docker-machine"
 
 	app.Commands = commands.Commands
 	app.CommandNotFound = cmdNotFound

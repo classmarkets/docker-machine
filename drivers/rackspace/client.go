@@ -3,9 +3,9 @@ package rackspace
 import (
 	"fmt"
 
-	"github.com/docker/machine/drivers/openstack"
-	"github.com/docker/machine/libmachine/log"
-	"github.com/docker/machine/libmachine/version"
+	"github.com/classmarkets/docker-machine/drivers/openstack"
+	"github.com/classmarkets/docker-machine/libmachine/log"
+	"github.com/classmarkets/docker-machine/libmachine/version"
 	"github.com/rackspace/gophercloud"
 	"github.com/rackspace/gophercloud/rackspace"
 )

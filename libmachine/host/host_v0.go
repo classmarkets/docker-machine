@@ -1,6 +1,6 @@
 package host
 
-import "github.com/docker/machine/libmachine/drivers"
+import "github.com/classmarkets/docker-machine/libmachine/drivers"
 
 type V0 struct {
 	Name          string `json:"-"`

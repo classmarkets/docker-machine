@@ -3,8 +3,8 @@ package virtualbox
 import (
 	"time"
 
-	"github.com/docker/machine/libmachine/drivers"
-	"github.com/docker/machine/libmachine/mcnutils"
+	"github.com/classmarkets/docker-machine/libmachine/drivers"
+	"github.com/classmarkets/docker-machine/libmachine/mcnutils"
 )
 
 // IPWaiter waits for an IP to be configured.
