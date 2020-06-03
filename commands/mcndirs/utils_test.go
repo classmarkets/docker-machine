@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/docker/machine/libmachine/mcnutils"
+	"github.com/classmarkets/docker-machine/libmachine/mcnutils"
 )
 
 func TestGetBaseDir(t *testing.T) {

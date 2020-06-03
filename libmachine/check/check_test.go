@@ -6,8 +6,8 @@ import (
 
 	"crypto/tls"
 
-	"github.com/docker/machine/libmachine/auth"
-	"github.com/docker/machine/libmachine/cert"
+	"github.com/classmarkets/docker-machine/libmachine/auth"
+	"github.com/classmarkets/docker-machine/libmachine/cert"
 	"github.com/stretchr/testify/assert"
 )
 
